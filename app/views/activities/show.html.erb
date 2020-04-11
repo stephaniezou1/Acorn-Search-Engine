@@ -1,0 +1,26 @@
+
+<h1> <%= @activity.name %> </h1>
+<h2> <%= @activity.organization.name %> </h2>
+<h3> <%= @activity.organization.street %>,<br/><%= @activity.organization.apt_num%><br> <%= @activity.organization.city %>, <%= @activity.organization.state %> <%= @activity.organization.zipcode_id %> </h3>
+
+ <% if @activity.ratings.length == 0 %>
+
+      <p>This activity has no ratings yet</p>
+
+    <% else %>
+
+<ul>
+    <%= @activity.ratings.each do |rating| %>
+        <li>
+            <%= link_to activity.rating, rating_path(activity.rating) %>
+        </li>
+    <% end %>
+<% end %>
+</ul>
+
+<%= button_to "Rate this activity", new_rating_path(@activity), method: :get, class: "button" %>
+
+<br/>
+
+<%= button_to "Return To List of Activities", activities_path, method: :get, class: "button" %>
+

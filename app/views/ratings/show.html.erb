@@ -1,0 +1,6 @@
+<h1>Rating for <%= rating.activities.name %> </h1>
+<h2>You gave it a rating of: <%= rating.num_rating %> </h2>
+<h3> Your description was: <%= rating.description %> </h3>
+
+<%= button_to "Edit Rating", edit_rating_path, method: :get, class: "button" %>
+<%= button_to "Delete Rating", @parent, method: :delete, class: "button" %>

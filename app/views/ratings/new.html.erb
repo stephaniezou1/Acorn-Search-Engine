@@ -1,0 +1,26 @@
+<div class="card"> 
+
+<%= form_for @rating, html: { class: "form" } do |f| %>
+    <h2 class = "form-header"> Write a rating </h2>
+
+    <%= f.label :num_rating, "Submit your rating" %>
+    <%= f.number_field :num_rating %> <br/><br/>
+
+    <%= f.label :description, "Add a description"%>
+    <%= f.text_field :description %><br/><br/>
+
+    <% if flash[:errors] %>
+    <ul>
+        <% flash[:errors].each do |error_message| %>
+            <li class = "error"> <%= error_message %> </li>
+        <% end %>
+    </ul>
+    <% end %>
+
+    <%= f.submit "Post Rating", class: "button" %>
+
+<% end %>
+
+<%# how to direct this back to the profile specific to the rating? link_to "Return to Activity Profile", activity_path(rating.activity_id) %>
+
+</div>

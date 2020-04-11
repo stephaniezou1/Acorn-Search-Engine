@@ -1,2 +1,20 @@
-<h1>Parents#show</h1>
-<p>Find me in app/views/parents/show.html.erb</p>
+<h1>Your Profile</h1>
+
+<h2> Your Ratings </h2>
+
+<% if @parent.ratings.length == 0 %>
+
+  <p>You have not rated any activities yet</p>
+
+<% else %>
+    <ol>
+    <%= @parent.ratings.each do |rating| %>
+        <li>
+        <%= link_to rating.activity.name, rating_path(@parent.rating) %>
+        </li>
+    <% end %>
+<% end %>
+
+</ol>
+
+<%= button_to "Return To List of Activities", activities_path, method: :get, class: "button" %>
