@@ -1,0 +1,18 @@
+<h1>Teachers#show</h1>
+<p>Find me in app/views/teachers/show.html.erb</p>
+
+
+<% if @teacher.endorsements.length == 0 %>
+
+  <p>This teacher has not endorsed any activities yet</p>
+
+<% else %>
+    <ol>
+    <%= @teacher.endorsements.each do |endorsement| %>
+        <li>
+        <%= link_to endorsement.activity.name, endorsement_path(@teacher.endorsement) %>
+        </li>
+    <% end %>
+<% end %>
+
+</ol>
