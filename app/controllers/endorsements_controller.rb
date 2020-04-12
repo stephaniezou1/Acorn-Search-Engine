@@ -1,5 +1,7 @@
 class EndorsementsController < ApplicationController
   
+  before_action :set_endorsement, only: [:show, :edit, :update]
+
   def index
     @endorsements = Endorsement.all
   end
@@ -22,12 +24,19 @@ class EndorsementsController < ApplicationController
   end
 
   def update
+    @endorsement.update(endorsement_params)
+    redirect_to @endorsement
   end
 
   def show
+    @endorsed_activity = @endorsement.activity
   end
 
   private 
+
+  def set_endorsement
+    @endorsement = Endorsement.find(params[:id])
+  end
 
   def endorsement_params
     params.require(:endorsement).permit(:activity_id, :teacher_id, :list_category)

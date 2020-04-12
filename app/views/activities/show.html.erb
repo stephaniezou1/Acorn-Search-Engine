@@ -1,3 +1,4 @@
+<%# Activity shows all ratings, each rating displays the name, rating, and description %>
 
 <h1> <%= @activity.name %> </h1>
 <h2> <%= @activity.organization.name %> </h2>
@@ -12,7 +13,7 @@
 <ul>
     <%= @activity.ratings.each do |rating| %>
         <li>
-            <%= link_to activity.rating, rating_path(activity.rating) %>
+            @<%= rating.parent.username%> rated this activity as <%= rating.num_rating %> and described it as <%= rating.description%>
         </li>
     <% end %>
 <% end %>
