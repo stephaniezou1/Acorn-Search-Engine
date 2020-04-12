@@ -11,7 +11,7 @@ class EndorsementsController < ApplicationController
   def create
     @endorsement = Endorsement.create(endorsement_params)
     if endorsement.valid?
-      redirect_to @endorsement.activity
+      redirect_to @endorsement.teacher
     else
       flash[:errors] = endorsement.errors.full_messages
       redirect_to new_endorsement_path
@@ -19,6 +19,9 @@ class EndorsementsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
   end
 
   def show
