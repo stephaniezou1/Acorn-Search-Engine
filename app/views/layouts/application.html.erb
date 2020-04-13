@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Myapp</title>
+    <title>Acorn</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+        Welcome, <%= logged_in_user.username %>!
+        <%= button_to "Log out", "/logout" %>
+      <% else %>
+        <%= link_to "Log In", parent_login_path %>
+      <% end %>
     <%= yield %>
   </body>
 </html>
+
