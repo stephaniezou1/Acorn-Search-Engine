@@ -4,6 +4,12 @@ class ActivitiesController < ApplicationController
   
   def index
     @activities = Activity.all
+    if params[:search]
+      @activites.select do |activity|
+        activity.name.includes(params[:search])
+      end
+    end
+
   end
 
   def show

@@ -1,17 +1,20 @@
 <h1> See All Activities </h1>
 
+<form>
+  <input type="text" name="search"/>
+</form>
+
 <ul class="activity-list">
-    <%= @activities.each do |activity| %>
+    <% @activities.each do |activity| %>
         <li class="activity-list__item">
             <div class="activity-list__info">
-            <%= link_to activity.name, activity, class: "activity-list__name"%>
-            <div class="activity-list__organization">
-                <%= activity.organization.name %> at <%= activity.organization.city %>, <%=activity.organization.state %>
-            </div>
-            <div class="activity-list__rating">
-                Rating = 10
-                <%# activity.ratings.num_rating.round(2) %>
-            </div>
+                <%= link_to activity.name, activity, class: "activity-list__name"%>
+                <div class="activity-list__organization">
+                    <%= activity.organization.name %> at <%= activity.organization.city %>, <%=activity.organization.state %>
+                </div>
+                <div class="activity-list__rating">
+                    <%= activity.average_rating.round(2) %>
+                </div>
             </div>
         </li>
     <% end %>

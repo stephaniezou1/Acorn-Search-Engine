@@ -10,7 +10,7 @@
     <ol>
     <%= @teacher.endorsements.each do |endorsement| %>
         <li>
-        <%= link_to endorsement.activity.name, endorsement_path(@teacher.endorsement) %>
+        <%= link_to endorsement.activity.name, activity_path(@teacher.endorsement.activity) %>
         </li>
     <% end %>
 <% end %>
