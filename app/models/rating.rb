@@ -7,9 +7,6 @@ class Rating < ApplicationRecord
         greater_than_or_equal_to: 0
       }
 
-      validates :description, length: { 
-        maximum: 200, 
-        minimum: 5
-      }
+      validates :description, presence: true
 
 end

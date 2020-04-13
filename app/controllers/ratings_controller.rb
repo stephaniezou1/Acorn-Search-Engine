@@ -1,6 +1,7 @@
 class RatingsController < ApplicationController
   
-  before_action :set_rating, only: [:show, :edit, :update, :destroy]
+  before_action :check_if_logged_in
+  before_action :set_rating, only: [:edit, :update, :destroy]
 
   def index
     @ratings = @logged_in_user.ratings
@@ -13,15 +14,12 @@ class RatingsController < ApplicationController
 
   def create
     @rating = @logged_in_user.ratings.create(rating_params)
-    if rating.valid?
+    if @rating.valid?
       redirect_to @rating.activity
     else
-      flash[:errors] = rating.errors.full_messages
-      redirect_to new_rating_path
+      flash[:errors] = @rating.errors.full_messages
+      redirect_to @rating.activity
     end
-  end
-
-  def show
   end
 
   def edit

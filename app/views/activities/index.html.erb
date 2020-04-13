@@ -1,8 +1,10 @@
 <h1> See All Activities </h1>
 
-<form>
-  <input type="text" name="search"/>
-</form>
+<%= form_tag activities_path, :method => 'get' do %>
+    <%= label_tag(:search, "Search For An After School Activity:") %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag("Search", :name => nil) %>
+<% end %>
 
 <ul class="activity-list">
     <% @activities.each do |activity| %>

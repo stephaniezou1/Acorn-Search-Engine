@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   get '/parents/login', to: 'parents#loginform', as: 'parent_login'
   post '/parents/login', to: 'parents#handle_login'
   post '/logout', to: 'parents#logout'
+  get '/search' => 'activities#search', :as => 'search_page'
 
   resources :teachers, only: [:index, :show, :new, :edit, :update]
-  resources :ratings, only: [:index, :show, :new, :edit, :update, :destroy]
+  resources :ratings
   resources :parents, only: [:index, :show, :new, :edit, :update]
   resources :activities, only: [:index, :show, :new, :edit, :update]
   resources :endorsements, only: [:index, :show, :new, :edit, :update]

@@ -1,14 +1,30 @@
 <%# Activity shows all ratings, each rating displays the name, rating, and description %>
 
 <h1> <%= @activity.name %> </h1>
-<h2> <%= @activity.organization.name %> </h2>
-<h3> <%= @activity.organization.street %><br/> <%= @activity.organization.city %>, <%= @activity.organization.state %> <%= @activity.organization.zipcode_id %> </h3>
-<h4> <%= @activity.phone %> </h4>
+<p> Organization: <%= @activity.organization.name %> </p>
+<p> Address: <%= @activity.organization.street %><br/> <%= @activity.organization.city %>, <%= @activity.organization.state %> <%= @activity.organization.zipcode_id %> </p>
+<p> Phone Number: <%= @activity.phone %> </p>
+
+<div class="card">
+<h2 class = "form-header"> Ratings </h2>
+ <% if @activity.ratings.length == 0 %>
+
+    <p>This activity has no ratings yet</p>
+
+    <% else %>
+    <ul>
+        <% @activity.ratings.each do |rating| %>
+                <%= rating.parent.username%> rated this activity: <%= rating.num_rating %> out of 10 <br/>
+                Description: <%= rating.description%>
+        <% end %>
+    <% end %>
+    </ul>
+</div>
 
 <div class="card"> 
 
 <%= form_for Rating.new, html: { class: "form" } do |f| %>
-    <h2 class = "form-header"> Write a rating </h2>
+    <h3 class = "form-header"> Write a rating </h3>
 
     <%= f.label :num_rating, "Submit your rating" %>
     <%= f.number_field :num_rating %> <br/><br/>
@@ -29,24 +45,6 @@
 <% end %>
 
 </div>
-
-
- <% if @activity.ratings.length == 0 %>
-
-      <p>This activity has no ratings yet</p>
-
-    <% else %>
-
-<ul>
-    <%= @activity.ratings.each do |rating| %>
-        <li>
-            @<%= rating.parent.username%> rated this activity as <%= rating.num_rating %> and described it as <%= rating.description%>
-        </li>
-    <% end %>
-<% end %>
-</ul>
-
-<%= button_to "Rate this activity", new_rating_path, method: :get, class: "button" %>
 
 <br/>
 

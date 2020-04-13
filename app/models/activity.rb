@@ -17,4 +17,16 @@ class Activity < ApplicationRecord
         end
     end
 
+    def self.search_by_activity(search)
+        if search
+            activity_keyword = Activity.find_by(name: search)
+            if activity_keyword
+                self.where(activity_id: activity_keyword)
+            else
+                @activities = Activity.all
+            end
+            @activities = Activity.all
+        end
+    end
+
 end

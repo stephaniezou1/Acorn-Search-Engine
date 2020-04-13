@@ -23,49 +23,49 @@ zipcode4 = Zipcode.create(zip_num: "41859")
 zipcode5 = Zipcode.create(zip_num: "33042")
 zipcode6 = Zipcode.create(zip_num: "11210")
 
-parent1 = Parent.create(
+parent1 = Parent.create!(
     username: "@motorcyclebadboy", 
     password: "joslynlivesinboston", 
     email: "jjenkins@gmail.com", 
     zipcode: zipcode1
 )
 
-parent2 = Parent.create(
+parent2 = Parent.create!(
     username: "@itsmichifang", 
     password: "michellelivesinla", 
     email: "michifang@hotmail.com", 
     zipcode: zipcode2
 )
 
-parent3 = Parent.create(
+parent3 = Parent.create!(
     username: "@mina.zhou", 
     password: "minalivesintoronto", 
     email: "minazhou@gmail.com", 
     zipcode: zipcode3
 )
 
-parent4 = Parent.create(
+parent4 = Parent.create!(
     username: "@tiffliang", 
     password: "tifflivesinsf", 
     email: "tiffanyliang@gmail.com", 
     zipcode: zipcode4
 )
 
-parent5 = Parent.create(
+parent5 = Parent.create!(
     username: "@naomielegant", 
     password: "naomilivesinhk", 
     email: "naomicelegant@gmail.com", 
     zipcode: zipcode5
 )
 
-parent6 = Parent.create(
+parent6 = Parent.create!(
     username: "@xanthecoffman", 
     password: "xanthevisitsla", 
     email: "xanthecoffman@gmail.com", 
     zipcode: zipcode2
 )
 
-parent7 = Parent.create(
+parent7 = Parent.create!(
     username: "@sachibajaj", 
     password: "sachilivesinsf", 
     email: "sachibajaj@gmail.com", 

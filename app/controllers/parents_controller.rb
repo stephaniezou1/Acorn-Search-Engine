@@ -1,8 +1,8 @@
 class ParentsController < ApplicationController
   
-  #before_action :set_parent, only: [:show, :edit, :update]
-  before_action :check_if_logged_in
-  skip_before_action :check_if_logged_in, only: [:loginform]
+  before_action :set_parent, only: [:show, :edit, :update]
+  # before_action :check_if_logged_in
+  # skip_before_action :check_if_logged_in, only: [:loginform]
 
 
   def index

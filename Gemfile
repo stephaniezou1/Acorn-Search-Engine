@@ -55,3 +55,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # for my seed data
 gem 'faker'
+gem 'materialize-sass'
+gem 'material_icons'
