@@ -4,7 +4,7 @@ class Parent < ApplicationRecord
     belongs_to :zipcode
 
     validates :email, uniqueness: true
-    validates :email, is_email_format: true
+    # validates :email, is_email_format: true
     validates :username, numericality: { 
         greater_than_or_equal_to: 3, 
         less_than_or_equal_to: 20
