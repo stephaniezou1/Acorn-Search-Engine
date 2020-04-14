@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head> <link href="https://fonts.googleapis.com/icon?family=Material\Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Acorn</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,26 +11,15 @@
   </head>
 
   <body>
-    <nav>
-    <% if logged_in? %>
-        Welcome, <%= logged_in_user.username %>!
-        <%= button_to "Log out", "/logout" %>
-      <% else %>
-        <%= link_to "Log In", parent_login_path %>
-      <% end %>
-      
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo center" >Logo </a>
-        <ul class="left hide-on-med-and-down">
-          <li> <a href="sass.html">Search</a></li>
-          <li> <a href="badges.html">My Ratings</a> </li>
-          <li class="active"> <a href="collapsible.html">My Profile</a></li>
-        </ul>
-      </div>
-    </nav>
-    
-      
+      <nav>
+      <% if logged_in? %>
+          Welcome, <%= logged_in_user.username %>!
+          <%= button_to "Log out", "/logout" %>
+        <% else %>
+          <%= link_to "Log In", "/login" %>
+        <% end %>
+      </nav>
+      <br>
     <%= yield %>
   </body>
 </html>
-

@@ -9,10 +9,10 @@
     <%= f.password_field :password %>
 
     <%= f.label :username %>
-    <%= f.number_field :username %>
+    <%= f.text_field :username %>
 
     <%= f.label :zipcode %>
-    <%= f.text_field :zipcode %>
+    <%= f.number_field :zipcode %>
 
     <% if flash[:errors] %>
       <ul>

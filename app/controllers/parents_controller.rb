@@ -1,8 +1,8 @@
 class ParentsController < ApplicationController
   
   before_action :set_parent, only: [:show, :edit, :update]
-  before_action :check_if_logged_in
-  skip_before_action :check_if_logged_in, only: [:loginform]
+  before_action :check_if_logged_in, only: [:show, :edit, :index, :update]
+  skip_before_action :check_if_logged_in, only: [:loginform, :new, :create]
 
 
   def index
@@ -18,12 +18,15 @@ class ParentsController < ApplicationController
   end
 
   def create
+    @num = params[:parent][:zipcode]
+    @zipcode = Zipcode.find_or_create_by!(zip_num: @num)
+    params[:parent][:zipcode_id] = @zipcode.id
     @parent = Parent.create(parent_params)
-    if parent.valid?
-      session[:parent_id] = parent.id
-      redirect_to parent
+    if @parent.valid?
+      session[:parent_id] = @parent.id
+      redirect_to @parent
     else
-      flash[:errors] = pet.errors.full_messages
+      flash[:errors] = @parent.errors.full_messages
       redirect_to new_parent_path
     end
   end
@@ -38,6 +41,7 @@ class ParentsController < ApplicationController
 
   def loginform
     @errors = flash[:errors]
+    # render "teachers/login"
   end
 
   def handle_login

@@ -14,4 +14,24 @@ class ApplicationController < ActionController::Base
     redirect_to parent_login_path unless logged_in?
   end
 
+  def parent_account
+    cookies[:parent_account] = {
+      value: 'parent account'
+    }
+    if @logged_in_user
+      redirect_to parent_login_path
+    else
+      redirect_to root_path
+    end
+  end
+
+  def teacher_account
+    cookies.delete[:parent_account]
+    if @logged_in_user
+      redirect_to teacher_login_path
+    else
+      redirect_to root_path
+    end
+  end
+
 end

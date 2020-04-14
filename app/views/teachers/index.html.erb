@@ -1,9 +1,13 @@
 <h1> Search For A Teacher </h1>
 
+<br>
+
 <%= form_tag(teachers_path, method: :get) do %>
   Search By Username, Email, or Zipcode <%= text_field_tag :search, params[:search] %>
   <%= submit_tag 'Search 🔍', name: nil %>
 <% end %>
+
+<br>
 
 <% if @teachers == [] %>
     <p> Waiting for you to enter a search term 📚🐣 </p>
@@ -24,3 +28,8 @@
         </li>
     <% end %>
 </ul>
+
+<br>
+
+<%= button_to "Go To Activities Search Page", activities_path, method: :get, class: "button" %>
+

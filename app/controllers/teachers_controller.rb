@@ -1,6 +1,6 @@
 class TeachersController < ApplicationController
 
-  before_action :set_parent, only: [:show, :edit, :update]
+  before_action :set_teacher, only: [:show, :edit, :update]
   before_action :check_if_logged_in
   
   
@@ -16,10 +16,19 @@ class TeachersController < ApplicationController
     end 
   end
 
-  def show
+  def new
+    @teacher = Teacher.new
   end
 
-  def edit
+  def create
+    @teacher = Teacher.create(teacher_params)
+    if teacher.valid?
+      session[:teacher_id] = teacher.id
+      redirect_to teacher
+    else
+      flash[:errors] = pet.errors.full_messages
+      redirect_to new_teacher_path
+    end
   end
 
   def update

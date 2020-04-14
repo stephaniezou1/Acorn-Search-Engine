@@ -6,7 +6,7 @@
         <p> You gave it a rating of: <%= rating.num_rating%></p>
         <p> Description: <%= rating.description %> </p>
         <%= button_to "Edit Rating", edit_rating_path(rating), method: :get, class: "button" %> <br/>
-        <%= button_to "Delete Rating", @parent, method: :delete, class: "button" %>
+        <%= button_to "Delete Rating", rating, method: :delete, class: "button" %>
         </li>
     <% end %>
 </ul>

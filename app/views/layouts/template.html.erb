@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,6 +9,16 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   </head>
   <body>
+
+  
+    <% if logged_in? %>
+        Welcome, <%= logged_in_user.username %>!
+        <%= button_to "Log out", "/logout" %>
+      <% else %>
+        <%= link_to "Log In", parent_login_path %>
+      <% end %>
+
+
   <section class="section">
     <div class="container">
       <h1 class="title">
