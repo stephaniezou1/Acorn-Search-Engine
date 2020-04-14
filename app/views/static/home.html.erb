@@ -4,11 +4,15 @@
         <h1 class="heading">Find Afterschool Activities 🔍</h1>
         <p class="form label">From dance to tutoring to daycare, find the best activities for your kids ☀️ </p>
         <p class="form label">Rated by parents and endorsed by teachers! 💯</p>
-        <p class="form label">
-          <a href=<%= new_parent_path %> class="button">Sign up as a parent </a>
-          <a href=<%= parent_login_path %> class="button">Log in as a parent</a> </p>
-        <p class="form label">
-          <a href=<%= new_teacher_path %> class="button">Sign up as a teacher </a>
-          <a href=<%= teacher_login_path %> class="button">Log in as a teacher</a></p>
+        <% if cookies[:parent_account] %>
+            <p class="form label">
+            <a href=<%= new_parent_path %> class="button">Sign up as a parent </a>
+            <a href=<%= parent_login_path %> class="button">Log in as a parent</a> </p>
+        <% end %>
+        <% if cookies[:teacher_account] %>
+            <p class="form label">
+            <a href=<%= new_teacher_path %> class="button">Sign up as a teacher </a>
+            <a href=<%= teacher_login_path %> class="button">Log in as a teacher</a></p>
+        <% end %>
       </main>
 </div>

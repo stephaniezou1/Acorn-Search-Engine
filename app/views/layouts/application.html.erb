@@ -5,18 +5,15 @@
     <title>Acorn</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
       <nav>
       <% if logged_in? %>
           Welcome, <%= logged_in_user.username %>!
           <%= button_to "Log out", "/logout" %>
         <% else %>
-          <%= link_to "Log In", "/login" %>
+          <%= link_to "Home", root_path %>
         <% end %>
       </nav>
       <br>

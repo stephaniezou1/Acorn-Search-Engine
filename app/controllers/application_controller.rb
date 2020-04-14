@@ -35,3 +35,14 @@ class ApplicationController < ActionController::Base
   end
 
 end
+
+
+# def parent_account
+#   @_parent_account ||= session[:parent_acount_id] &&
+#     Parent.find_by(id: session[:parent_account_id])
+# end
+
+# def teacher_account
+#   @_teacher_account ||= session[:teacher_account_id] &&
+#     User.find_by(id: session[:teacher_account_id])
+# end
