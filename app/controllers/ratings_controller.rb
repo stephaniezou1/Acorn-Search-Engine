@@ -6,7 +6,7 @@ class RatingsController < ApplicationController
   def index
     @ratings = @logged_in_user.ratings
   end
-  
+
   def new
     @rating = Rating.new
     @errors = flash[:errors]
@@ -27,7 +27,7 @@ class RatingsController < ApplicationController
   
   def update
     @rating.update(rating_params)
-    redirect_to @rating
+    redirect_to @rating.activity
   end
 
   def destroy

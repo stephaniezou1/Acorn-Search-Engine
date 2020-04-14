@@ -11,9 +11,9 @@ Rails.application.routes.draw do
 
   resources :teachers, only: [:index, :show, :new, :edit, :update]
   resources :ratings
-  resources :parents, only: [:index, :show, :new, :edit, :update]
-  resources :activities, only: [:index, :show, :new, :edit, :update]
-  resources :endorsements, only: [:index, :show, :new, :edit, :update]
+  resources :parents, only: [:index, :show, :new, :create, :edit, :update]
+  resources :activities
+  resources :endorsements, only: [:index, :show, :new, :create, :edit, :update]
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

@@ -1,9 +1,12 @@
-<h1> See All Activities </h1>
+<h1> Search For Activities </h1>
 
-<%= form_tag activities_path, :method => 'get' do %>
-    <%= label_tag(:search, "Search For An After School Activity:") %>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag("Search", :name => nil) %>
+<%= form_tag(activities_path, method: :get) do %>
+  Search By Activity, Organization, Keyword, or Zipcode <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag 'Search 🔍', name: nil %>
+<% end %>
+
+<% if @activities == [] %>
+    <p> Waiting for you to enter a search term 📚🐣 </p>
 <% end %>
 
 <ul class="activity-list">
@@ -21,3 +24,5 @@
         </li>
     <% end %>
 </ul>
+
+<%= button_to "Go To Teachers Search Page", teachers_path, method: :get, class: "button" %>

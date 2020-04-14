@@ -3,7 +3,15 @@ class TeachersController < ApplicationController
   before_action :check_if_logged_in
   
   def index
-    @teachers = Teacher.all
+    if params[:search]
+      search_term = params[:search].downcase.gsub(/\s+/, "")
+      @teachers = Teacher.all.select{ |teacher| 
+        teacher.username.downcase.include?(search_term) || 
+        teacher.email.downcase.include?(search_term) || 
+        teacher.zipcode.zip_num == search_term }
+    else
+      @teachers = []
+    end 
   end
 
   def show

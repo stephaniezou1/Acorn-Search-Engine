@@ -5,20 +5,30 @@ class ActivitiesController < ApplicationController
   
   def index
     if params[:search]
-      @activities = Activity.search_by_activity(params[:search])
+      search_term = params[:search].downcase.gsub(/\s+/, "")
+      @activities = Activity.all.select{ |activity| 
+        activity.name.downcase.include?(search_term) || 
+        activity.description.downcase.include?(search_term) || 
+        activity.organization.name.downcase.include?(search_term) || 
+        activity.organization.city.downcase.include?(search_term) || 
+        activity.organization.state.downcase.include?(search_term) || 
+        activity.zipcode.zip_num == search_term }
     else
-      @activities = Activity.all
+      @activities = []
     end 
   end
+  
 
-  # def search  
-  #   if params[:search].blank?  
-  #     redirect_to activities_path  
-  #   else  
-  #     @parameter = params[:search].downcase  
-  #     @results = Activity.all.where("lower(name) LIKE :search", search: @parameter)  
-  #   end  
-  # end
+  def new
+    @activity = Activity.new
+  end
+
+  def create
+    @activity = Activity.create(activity_params)
+    redirect_to activities_path
+  end
+
+  
 
   def show
   end

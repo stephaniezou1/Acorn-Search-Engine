@@ -1,2 +1,23 @@
-<h1>Ratings#edit</h1>
-<p>Find me in app/views/ratings/edit.html.erb</p>
+<div class="card">
+  
+  <%= form_for @rating, html: { class: "form" } do |f| %>
+    <h2 class="form-header">Edit Rating</h2>
+
+    <%= f.label :num_rating %>
+    <%= f.number_field :num_rating %>
+
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+
+    <% if flash[:errors] %>
+      <ul>
+        <% flash[:errors].each do |error| %>
+          <li class="error"><%= error %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <%= f.submit "Update Rating", class: "button" %>
+  <% end %>
+
+</div>

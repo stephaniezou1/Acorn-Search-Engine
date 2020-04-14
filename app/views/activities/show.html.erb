@@ -15,7 +15,7 @@
     <ul>
         <% @activity.ratings.each do |rating| %>
                 <%= rating.parent.username%> rated this activity: <%= rating.num_rating %> out of 10 <br/>
-                Description: <%= rating.description%>
+                Description: <%= rating.description%><br/><br/>
         <% end %>
     <% end %>
     </ul>

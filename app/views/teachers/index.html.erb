@@ -1,2 +1,26 @@
-<h1>Teachers#index</h1>
-<p>Find me in app/views/teachers/index.html.erb</p>
+<h1> Search For A Teacher </h1>
+
+<%= form_tag(teachers_path, method: :get) do %>
+  Search By Username, Email, or Zipcode <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag 'Search 🔍', name: nil %>
+<% end %>
+
+<% if @teachers == [] %>
+    <p> Waiting for you to enter a search term 📚🐣 </p>
+<% end %>
+
+<ul class="teacher-list">
+    <% @teachers.each do |teacher| %>
+        <li class="teacher-list__item">
+            <div class="teacher-list__info">
+                <%= link_to teacher.username, teacher, class: "teacher-list__username"%>
+                <div class="teacher-list__information">
+                    <%= teacher.email %> at <%= teacher.zipcode.zip_num %>
+                </div>
+                <div class="teacher-list__endorsements">
+                    <p> Number of Endorsements:</p><%= teacher.endorsements.length %>
+                </div>
+            </div>
+        </li>
+    <% end %>
+</ul>
