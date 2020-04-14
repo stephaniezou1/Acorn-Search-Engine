@@ -28,8 +28,6 @@ class ActivitiesController < ApplicationController
     redirect_to activities_path
   end
 
-  
-
   def show
   end
 

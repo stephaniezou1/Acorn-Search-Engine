@@ -1,6 +1,8 @@
 class TeachersController < ApplicationController
 
+  before_action :set_parent, only: [:show, :edit, :update]
   before_action :check_if_logged_in
+  
   
   def index
     if params[:search]
@@ -15,13 +17,14 @@ class TeachersController < ApplicationController
   end
 
   def show
-    @teacher = Teacher.find(params[:id])
   end
 
   def edit
   end
 
   def update
+    @teacher.update(teacher_params)
+    redirect_to @teacher
   end
 
   def loginform
@@ -45,6 +48,10 @@ class TeachersController < ApplicationController
   end
 
   private
+
+  def set_teacher
+    @teacher = Teacher.find(params[:id])
+  end
 
   def teacher_params
     params.require(:teacher).permit(:username, :email, :zipcode_id, :password)

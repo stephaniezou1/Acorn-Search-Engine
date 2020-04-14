@@ -1,6 +1,8 @@
-<h1>Teachers#show</h1>
-<p>Find me in app/views/teachers/show.html.erb</p>
+<h1> Username - <%= @teacher.username %> </h1>
+<p> Email - <%= @teacher.email %> </p>
+<p> Zipcode - <%= @teacher.zipcode.zip_num %> </p>
 
+<br/>
 
 <% if @teacher.endorsements.length == 0 %>
 
@@ -8,9 +10,9 @@
 
 <% else %>
     <ol>
-    <%= @teacher.endorsements.each do |endorsement| %>
+    <% @teacher.endorsements.each do |endorsement_instance| %>
         <li>
-        <%= link_to endorsement.activity.name, activity_path(@teacher.endorsement.activity) %>
+        <%= link_to endorsement_instance.activity.name, endorsement_instance.activity %>
         </li>
     <% end %>
 <% end %>

@@ -1,7 +1,7 @@
 class RatingsController < ApplicationController
   
   before_action :check_if_logged_in
-  before_action :set_rating, only: [:edit, :update, :destroy]
+  before_action :set_rating, only: [:show, :edit, :update, :destroy]
 
   def index
     @ratings = @logged_in_user.ratings

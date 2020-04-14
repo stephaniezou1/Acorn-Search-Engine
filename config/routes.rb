@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :teachers, only: [:index, :show, :new, :edit, :update]
   resources :ratings
-  resources :parents, only: [:index, :show, :new, :create, :edit, :update]
+  resources :parents
   resources :activities
   resources :endorsements, only: [:index, :show, :new, :create, :edit, :update]
 

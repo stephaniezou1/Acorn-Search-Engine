@@ -6,6 +6,8 @@ class Parent < ApplicationRecord
     has_secure_password
 
     validates :email, uniqueness: true
+    validates :email, presence: true
+
     # validates :email, is_email_format: true
     validates :username, presence: true
     

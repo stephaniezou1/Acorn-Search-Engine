@@ -15,10 +15,10 @@
             <div class="teacher-list__info">
                 <%= link_to teacher.username, teacher, class: "teacher-list__username"%>
                 <div class="teacher-list__information">
-                    <%= teacher.email %> at <%= teacher.zipcode.zip_num %>
+                    <p> Email: <%= teacher.email %> <br/> Zipcode: <%= teacher.zipcode.zip_num %></p>
                 </div>
                 <div class="teacher-list__endorsements">
-                    <p> Number of Endorsements:</p><%= teacher.endorsements.length %>
+                    <p> Number of Endorsements: <%= teacher.endorsements.length %></p> 
                 </div>
             </div>
         </li>

@@ -1,2 +1,29 @@
-<h1>Teachers#edit</h1>
-<p>Find me in app/views/teachers/edit.html.erb</p>
+<div class="card">
+  
+  <%= form_for @teacher, html: { class: "form" } do |f| %>
+    <h2 class="form-header">Edit Profile</h2>
+
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+
+    <%= f.label :zipcode_id %>
+    <%= f.number_field :zipcode_id %>
+
+    <% if flash[:errors] %>
+      <ul>
+        <% flash[:errors].each do |error| %>
+          <li class="error"><%= error %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <%= f.submit "Update Your Information", class: "button" %>
+  <% end %>
+
+</div>
