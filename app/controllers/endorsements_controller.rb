@@ -1,9 +1,10 @@
 class EndorsementsController < ApplicationController
   
-  before_action :set_endorsement, only: [:show, :edit, :update]
+  before_action :check_if_logged_in
+  before_action :set_endorsement, only: [:show, :edit, :update, :destroy]
 
   def index
-    @endorsements = Endorsement.all
+    @endorsements = @logged_in_user.endorsements
   end
 
   def new
@@ -29,7 +30,11 @@ class EndorsementsController < ApplicationController
   end
 
   def show
-    @endorsed_activity = @endorsement.activity
+  end
+
+  def destroy
+    @endorsement.destroy
+    redirect_to @endorsement
   end
 
   private 

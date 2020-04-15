@@ -1,20 +1,29 @@
-<h1> Username - <%= @teacher.username %> </h1>
-<p> Email - <%= @teacher.email %> </p>
-<p> Zipcode - <%= @teacher.zipcode.zip_num %> </p>
+<section class="profile">
+  <div class="profile__info">
+    
+    <h1>Teacher Profile</h1>
 
-<br/>
+      <p> Username: <%= @teacher.username %> </p>
+      <p> Email: <%= @teacher.email %> </p>
+      <p> Zipcode: <%= @teacher.zipcode.zip_num %> </p>
 
-<% if @teacher.endorsements.length == 0 %>
+      <br/>
 
-  <p>This teacher has not endorsed any activities yet</p>
+      <h2> Endorsements </h2>
 
-<% else %>
-    <ol>
-    <% @teacher.endorsements.each do |endorsement_instance| %>
-        <li>
-        <%= link_to endorsement_instance.activity.name, endorsement_instance.activity %>
-        </li>
-    <% end %>
-<% end %>
+      <% if @teacher.endorsements.length == 0 %>
 
-</ol>
+        <p>This teacher has not endorsed any activities yet</p>
+
+      <% else %>
+          <ol>
+          <% @teacher.endorsements.each do |endorsement_instance| %>
+              <li>
+              <%= link_to endorsement_instance.activity.name, endorsement_instance.activity %>
+              </li>
+          <% end %>
+      <% end %>
+
+      </ol>
+
+</div>

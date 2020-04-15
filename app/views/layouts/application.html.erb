@@ -5,18 +5,41 @@
     <title>Acorn</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-      <nav>
-      <% if logged_in? %>
-          Welcome, <%= logged_in_user.username %>!
-          <%= button_to "Log out", "/logout" %>
-        <% else %>
-          <%= link_to "Home", root_path %>
-        <% end %>
-      </nav>
-      <br>
-    <%= yield %>
-  </body>
+      <header class="menu">
+        <div class="container">
+          <nav class="logo">
+            <h2>Acorn</h2>
+          </nav>
+          <nav class="right">
+              <%# conditional statement here for nav bar%>
+              <%= link_to "Search For An Activity", activities_path, class: "item" %>
+              <%= link_to "Find A Teacher", teachers_path, class: "item" %>
+                <% if logged_in_parent %>
+                    <%= link_to "See My Ratings", ratings_path, class: "item" %>
+                <% end %>
+                <% if logged_in_teacher %>
+                    <%= link_to "See My Endorsements", endorsements_path, class: "item" %>
+                <% end %>
+                  <span class="item">      
+                      <% if logged_in? %>
+                      Welcome, <%= logged_in_user.username %>!
+                      <%= button_to "Log out", "/logout" %> <%# need to access teachers/logout or parents/logout%>
+                    <% else %>
+                      <%= link_to "Home", root_path %>
+                    <% end %>
+                  </span>
+          
+              </nav>
+            </div>
+          </header>
+        <main>
+          <div class="container">
+              <%= yield %>
+        </div>
+      </main>
+    </body>
 </html>

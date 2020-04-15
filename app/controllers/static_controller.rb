@@ -9,10 +9,5 @@ class StaticController < ApplicationController
       end
     end
   end
-  
-  # def home
-  #   if logged_in?
-  #     redirect_to parent_path(logged_in_user)
-  #   end
-  # end
+
 end

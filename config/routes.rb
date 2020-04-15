@@ -7,11 +7,16 @@ Rails.application.routes.draw do
 
   get '/parents/login', to: 'parents#loginform', as: 'parent_login'
   post '/parents/login', to: 'parents#handle_login'
-  post '/logout', to: 'parents#logout'
+  # post '/logout', to: 'parents#logout'
 
   get '/teachers/login', to: 'teachers#loginform', as: 'teacher_login'
   post '/teachers/login', to: 'teachers#handle_login'
-  post '/logout', to: 'teachers#logout'
+  
+  #LOGOUT
+
+  post '/logout', to: 'application#logout'
+
+  post '/teachers/endorsements/:activity_id', to: 'teachers#endorse', as: 'teacher_endorse'
   
   #SESSIONS
 
@@ -23,7 +28,7 @@ Rails.application.routes.draw do
   resources :ratings
   resources :parents
   resources :activities
-  resources :endorsements, only: [:index, :show, :new, :create, :edit, :update]
+  resources :endorsements
 
   get '*path' => redirect('/')
 

@@ -2,7 +2,7 @@ class ParentsController < ApplicationController
   
   before_action :set_parent, only: [:show, :edit, :update]
   before_action :check_if_logged_in, only: [:show, :edit, :index, :update]
-  skip_before_action :check_if_logged_in, only: [:loginform, :new, :create]
+  skip_before_action :check_if_logged_in, only: [:loginform, :handle_login, :new, :create]
 
 
   def index
@@ -10,6 +10,9 @@ class ParentsController < ApplicationController
   end
 
   def show
+    if @logged_in_user.id != params[:id].to_i
+      redirect_to @logged_in_user
+    end
   end
 
   def new
@@ -57,7 +60,7 @@ class ParentsController < ApplicationController
 
   def logout
     session[:parent_id] = nil
-    redirect_to parent_login_path
+    redirect_to root_path
   end
 
   private

@@ -1,5 +1,8 @@
+<div class = "form">
+
 <h1> Search For Activities </h1>
 <br/>
+
 <%= form_tag(activities_path, method: :get) do %>
   Search By Activity, Organization, Keyword, or Zipcode <%= text_field_tag :search, params[:search] %>
   <%= submit_tag 'Search 🔍', name: nil %>
@@ -26,4 +29,6 @@
 </ul>
 
 <br>
-<%= button_to "Go To Teachers Search Page", teachers_path, method: :get, class: "button" %>
+<%# <%= button_to "Go To Teachers Search Page", teachers_path, method: :get, class: "button" %> 
+
+</div>
