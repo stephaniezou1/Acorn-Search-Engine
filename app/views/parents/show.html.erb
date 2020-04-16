@@ -1,27 +1,19 @@
 <section class="profile">
   <div class="profile__info">
 
-    <h1>Your Profile</h1>
+    <h1 class="display-6">Your Profile</h1>
 
     <p> Email: <%= @parent.email%> </p> <p>Username: <%= @parent.username %> </p> <p> Zipcode: <%= @parent.zipcode.zip_num %> </p>
 
-  <ol>
-    <h2> Your Ratings </h2>
+    <h2 class="display-6">Your Ratings</h2><br/>  
     <% if @parent.ratings.length == 0 %>
       <p>You have not rated any activities yet</p>
     <% else %>
-        <%= link_to "See Your Ratings", ratings_path %>
+        <%= link_to "See Your Ratings", ratings_path%>
     <% end %>
-  
-  </ol>
-  
+    <br/><br/>
   <%= button_to "Edit Your Profile", edit_parent_path, method: :get, class: "button" %>
 
  </div>
 
- </section>
-
-<%= button_to "Go To Activities Search Page", activities_path, method: :get, class: "button" %>
-<%= button_to "Go To Teachers Search Page", teachers_path, method: :get, class: "button" %>
-
-
+</section>

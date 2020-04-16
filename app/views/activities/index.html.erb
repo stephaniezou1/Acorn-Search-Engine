@@ -1,13 +1,14 @@
-<div class = "form">
+<div class = "search">
 
-<h1> Search For Activities </h1>
+<h1 class="display-5"> Search For Activities </h1>
 <br/>
 
-<%= form_tag(activities_path, method: :get) do %>
-  Search By Activity, Organization, Keyword, or Zipcode <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag 'Search 🔍', name: nil %>
+    <div class="inline"><%= form_tag(activities_path, method: :get) do %>
+        Search By Activity, Organization, Keyword, or Zipcode <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag 'Search 🔍', name: nil %>
+  </div> 
 <% end %>
-<br>
+<br/><br/>
 <% if @activities == [] %>
     <p> Waiting for you to enter a search term 📚🐣 </p>
 <% end %>
@@ -21,14 +22,11 @@
                     <%= activity.organization.name %> at <%= activity.organization.city %>, <%=activity.organization.state %>
                 </div>
                 <div class="activity-list__rating">
-                    <%= activity.average_rating.round(2) %>
+                    Average rating of <%= activity.average_rating.round(2) %>
                 </div>
             </div>
         </li>
     <% end %>
 </ul>
-
-<br>
-<%# <%= button_to "Go To Teachers Search Page", teachers_path, method: :get, class: "button" %> 
-
+</div>
 </div>

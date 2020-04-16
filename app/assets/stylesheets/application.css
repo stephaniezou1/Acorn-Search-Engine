@@ -58,8 +58,8 @@
    display: inline
  }
 
- .right {
-   
+ .search {
+   margin-top: 10em;
  }
 
  .block {
@@ -200,8 +200,8 @@
  .activity-list__info {
    padding: 0 1em;
    font-weight: lighter;
-   font-size: 13px;
-   width: 40%;
+   font-size: 15px;
+   width: 60%;
  }
  
  .activity-list__actions {
@@ -212,7 +212,7 @@
  .activity-list__name {
    display: block;
    font-weight: bold;
-   font-size: 16px;
+   font-size: 15px;
  }
  
  .activity-list__rating {
@@ -297,12 +297,37 @@
    font-weight: lighter;
  }
  
+ /* results */
+
+ .results {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   align-content: flex-start;
+   justify-content: center;
+ }
+ 
+ .results .results__info {
+   flex: 0 1 calc(100% - 1rem);
+   background-color: white;
+   height: 100%;
+   padding: 1rem;
+   box-shadow: rgba(160, 160, 160, 0.45) 0px 1px 3px 0px, rgba(0, 0, 0, 0.08) 0px 0px 3px 0px; 
+ }
+ 
+ 
+ .results .results__info p {
+   line-height: 1.5em;
+   font-weight: lighter;
+ }
+
  /* profile */
  .profile {
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
    align-content: flex-start;
+   justify-content: center;
  }
  
  .profile .profile__info {
@@ -310,8 +335,9 @@
    background-color: white;
    height: 100%;
    padding: 1rem;
-   box-shadow: rgba(160, 160, 160, 0.45) 0px 1px 3px 0px, rgba(0, 0, 0, 0.08) 0px 0px 3px 0px;
+   box-shadow: rgba(160, 160, 160, 0.45) 0px 1px 3px 0px, rgba(0, 0, 0, 0.08) 0px 0px 3px 0px; 
  }
+ 
  
  .profile .profile__info p {
    line-height: 1.5em;
