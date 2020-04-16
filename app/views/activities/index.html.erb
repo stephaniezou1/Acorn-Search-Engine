@@ -1,8 +1,6 @@
 <div class = "search">
-
-<h1 class="display-5"> Search For Activities </h1>
-<br/>
-
+    <h1 class="display-5"> Search For Activities </h1>
+    <br/>
     <div class="inline"><%= form_tag(activities_path, method: :get) do %>
         Search By Activity, Organization, Keyword, or Zipcode <%= text_field_tag :search, params[:search] %>
     <%= submit_tag 'Search 🔍', name: nil %>

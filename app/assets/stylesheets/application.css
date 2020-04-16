@@ -331,7 +331,7 @@
  }
  
  .profile .profile__info {
-   flex: 0 1 calc(60% - 1rem);
+   flex: 0 1 calc(80% - 1rem);
    background-color: white;
    height: 100%;
    padding: 1rem;

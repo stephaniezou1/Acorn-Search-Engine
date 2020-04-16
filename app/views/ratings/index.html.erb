@@ -1,14 +1,21 @@
-<h1> See Your Ratings </h1>
+<section class="profile">
+  <div class="profile__info">
 
-<ul class="rating-list">
-    <% @ratings.each do |rating| %>
-        <li>
-        <p> You gave it a rating of: <%= rating.num_rating%></p>
-        <p> Description: <%= rating.description %> </p>
-        <%= button_to "Edit Rating", edit_rating_path(rating), method: :get, class: "button" %> <br/>
-        <%= button_to "Delete Rating", rating, method: :delete, class: "button" %>
-        </li>
-    <% end %>
-</ul>
+    <h1 class="display-6"> See Your Ratings </h1>
 
-<%= button_to "Return To Your Profile", @logged_in_user, method: :get, class: "button" %> <br/>
+    <ul class="rating-list">
+        <% @ratings.each do |rating| %>
+            <li>
+            You gave it a rating of: <%= rating.num_rating%> out of 10<br/>
+            Description: <%= rating.description %><br/>
+            <%= button_to "Edit Rating", edit_rating_path(rating), method: :get, class: "button" %>
+            <%= button_to "Delete Rating", rating, method: :delete, class: "button" %>
+            </li>
+        <% end %>
+    </ul>
+<br/>
+<%= button_to "Return To Your Profile", @logged_in_user, method: :get, class: "button" %> 
+
+    </section>
+
+

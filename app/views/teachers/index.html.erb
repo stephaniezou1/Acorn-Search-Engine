@@ -1,13 +1,15 @@
-<h1> Search For A Teacher </h1>
+<div class = "search">
 
-<br>
+<h1 class="display-5"> Find a Teacher </h1>
+<br/>
 
-<%= form_tag(teachers_path, method: :get) do %>
+<div class="inline"><%= form_tag(teachers_path, method: :get) do %>
   Search By Username, Email, or Zipcode <%= text_field_tag :search, params[:search] %>
   <%= submit_tag 'Search 🔍', name: nil %>
+</div>
 <% end %>
 
-<br>
+<br/><br/>
 
 <% if @teachers == [] %>
     <p> Waiting for you to enter a search term 📚🐣 </p>
@@ -15,14 +17,14 @@
 
 <ul class="teacher-list">
     <% @teachers.each do |teacher| %>
-        <li class="teacher-list__item">
-            <div class="teacher-list__info">
+        <li class="activity-list__item">
+            <div class="activity-list__info">
                 <%= link_to teacher.username, teacher, class: "teacher-list__username"%>
-                <div class="teacher-list__information">
-                    <p> Email: <%= teacher.email %> <br/> Zipcode: <%= teacher.zipcode.zip_num %></p>
+                <div class="activity-list__organization">
+                    Email: <%= teacher.email %> <br/> Zipcode: <%= teacher.zipcode.zip_num %>
                 </div>
                 <div class="teacher-list__endorsements">
-                    <p> Number of Endorsements: <%= teacher.endorsements.length %></p> 
+                    Number of Endorsements: <%= teacher.endorsements.length %>
                 </div>
             </div>
         </li>
