@@ -1,19 +1,20 @@
-<h1>Login as a Teacher</h1>
+<h1 class="title">Teacher Login</h1>
 
 <%= form_tag "/teachers/login", method: "POST", class: 'form' do %>
-  <%= label_tag :email %>
-  <%= text_field_tag :email %>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
+ <div class="field">
+    <label class="label"><%= label_tag :email %></label>
+      <div class="control has-icons-left has-icons-right">
+      <%= text_field_tag :email %>
+    <label class="label"><%= label_tag :password %></label>  
+    <%= password_field_tag :password %>
+  <br/>
 
   <% if flash[:error] %>
     <ul>
         <li class="error"><%= flash[:error] %></li>
     </ul>
   <% end %>
-
-  <br><br>
-
-  <%= submit_tag "Log In" %>
+  <br/>
+    <button class="button is-link"><%= submit_tag "Log In" %></button>
 
 <% end %>

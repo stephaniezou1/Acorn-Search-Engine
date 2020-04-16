@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <head> <link href="https://fonts.googleapis.com/icon?family=Material\Icons" rel="stylesheet">
+  <head> 
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <title>Acorn</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,34 +12,31 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-      <header class="menu">
-        <div class="container">
-          <nav class="logo">
-            <h2>Acorn</h2>
-          </nav>
-          <nav class="right">
-              <%# conditional statement here for nav bar%>
-              <%= link_to "Search For An Activity", activities_path, class: "item" %>
-              <%= link_to "Find A Teacher", teachers_path, class: "item" %>
-                <% if logged_in_parent %>
-                    <%= link_to "See My Ratings", ratings_path, class: "item" %>
-                <% end %>
-                <% if logged_in_teacher %>
-                    <%= link_to "See My Endorsements", endorsements_path, class: "item" %>
-                <% end %>
-                  <span class="item">      
-                      <% if logged_in? %>
-                      Welcome, <%= logged_in_user.username %>!
-                      <%= button_to "Log out", "/logout" %> <%# need to access teachers/logout or parents/logout%>
-                    <% else %>
-                      <%= link_to "Home", root_path %>
-                    <% end %>
-                  </span>
-          
-              </nav>
-            </div>
-          </header>
-        <main>
+  <%# Insert Logo Here%>
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar is-fixed-top">  
+      <html class="has-navbar-fixed-top">
+        <a class="navbar-item">
+          <% if logged_in? %>
+            <%= link_to "Search For An Activity", activities_path, class: "item" %>
+            <%= link_to "Find A Teacher", teachers_path, class: "item" %>
+          <% if logged_in_parent %>
+            <%= link_to "See My Ratings", ratings_path, class: "item" %>
+          <% end %>
+          <% if logged_in_teacher %>
+            <%= link_to "See My Endorsements", endorsements_path, class: "item" %>
+          <% end %>
+          <% if logged_in? %>
+            Welcome, <%= logged_in_user.username %>!
+            <%= button_to "Log out", "/logout" %> <%# need to access teachers/logout or parents/logout%>
+          <% else %>
+            <%= link_to "Home", root_path %>
+          <% end %>        
+          <%end%>  
+      </html>
+    </div>
+  </div>
+  <main>
           <div class="container">
               <%= yield %>
         </div>

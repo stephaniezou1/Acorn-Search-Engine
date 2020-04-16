@@ -1,7 +1,7 @@
-<section class="profile">
-  <div class="profile__info">
+<div class="container">
+  <div class="notification">
 
-    <h1>Your Profile</h1>
+    <h1 class="title">Your Profile</h1>
 
     <p> Email: <%= @parent.email%> </p> <p>Username: <%= @parent.username %> </p> <p> Zipcode: <%= @parent.zipcode.zip_num %> </p>
 
@@ -17,11 +17,10 @@
   
   <%= button_to "Edit Your Profile", edit_parent_path, method: :get, class: "button" %>
 
- </div>
-
- </section>
-
 <%= button_to "Go To Activities Search Page", activities_path, method: :get, class: "button" %>
 <%= button_to "Go To Teachers Search Page", teachers_path, method: :get, class: "button" %>
+
+</div>
+</div>
 
 
