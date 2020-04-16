@@ -19,7 +19,7 @@
     <% @teachers.each do |teacher| %>
         <li class="activity-list__item">
             <div class="activity-list__info">
-                <%= link_to teacher.username, teacher, class: "teacher-list__username"%>
+                <%= link_to teacher.username, teacher, class: "teacher-list__name"%>
                 <div class="activity-list__organization">
                     Email: <%= teacher.email %> <br/> Zipcode: <%= teacher.zipcode.zip_num %>
                 </div>

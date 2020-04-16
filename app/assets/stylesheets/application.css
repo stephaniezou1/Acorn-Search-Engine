@@ -20,7 +20,7 @@
 
 
  :root {
-    --theme-primary: rgb(200, 162, 200);
+    --theme-primary: rgb(172, 114, 172);
     --background-color: #F6F6F6;
     --font-color: #00224B;
   }
@@ -48,7 +48,7 @@
  }
  
  main {
-   margin-top: 2rem;
+   margin-top: 4.5rem;
  }
  
  hr {
@@ -57,11 +57,14 @@
  }
  
  .inline {
-   display: inline
- }
+   display: inline;
+}
 
  .search {
-   margin-top: 10em;
+   margin-top: 5em;
+   width: 100%;
+   padding: 3rem;
+   background-color: white;
  }
 
  .block {
@@ -72,6 +75,10 @@
   list-style: none; /* Removes list bullets */
   padding: 10px;
   margin: 0;
+}
+
+.new-nav-color {
+  background-color: #dcc8cc !important;
 }
 
  /* headings */
@@ -271,6 +278,7 @@
   display: block;
   font-weight: bold;
   font-size: 16px;
+  color: 
 }
 
 .teacher-list__rating {
