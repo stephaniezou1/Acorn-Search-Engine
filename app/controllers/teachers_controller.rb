@@ -27,12 +27,15 @@ class TeachersController < ApplicationController
   end
 
   def create
+    @num = params[:teacher][:zipcode]
+    @zipcode = Zipcode.find_or_create_by!(zip_num: @num)
+    params[:teacher][:zipcode_id] = @zipcode.id
     @teacher = Teacher.create(teacher_params)
-    if teacher.valid?
-      session[:teacher_id] = teacher.id
-      redirect_to teacher
+    if @teacher.valid?
+      session[:teacher_id] = @teacher.id
+      redirect_to @teacher
     else
-      flash[:errors] = pet.errors.full_messages
+      flash[:errors] = @teacher.errors.full_messages
       redirect_to new_teacher_path
     end
   end

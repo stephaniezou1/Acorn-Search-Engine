@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head> <link href="https://fonts.googleapis.com/icon?family=Material\Icons" rel="stylesheet">
+  <head> 
+  <link href="https://fonts.googleapis.com/icon?family=Material\Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Acorn</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
       <header class="menu">
         <div class="container">
-          <nav class="logo">
-            <h2>Acorn</h2>
+          <%# <nav class="logo">
+            <h2>Acorn</h2> %>
           </nav>
           <nav class="right">
-              <%# conditional statement here for nav bar%>
+              <% if logged_in? %>
               <%= link_to "Search For An Activity", activities_path, class: "item" %>
               <%= link_to "Find A Teacher", teachers_path, class: "item" %>
                 <% if logged_in_parent %>
@@ -27,12 +29,12 @@
                   <span class="item">      
                       <% if logged_in? %>
                       Welcome, <%= logged_in_user.username %>!
-                      <%= button_to "Log out", "/logout" %> <%# need to access teachers/logout or parents/logout%>
+                      <%= button_to "Log out", "/logout" %>
                     <% else %>
                       <%= link_to "Home", root_path %>
                     <% end %>
                   </span>
-          
+                <% end %>
               </nav>
             </div>
           </header>
