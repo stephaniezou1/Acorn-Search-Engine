@@ -1,15 +1,38 @@
-<div class="card">
+
+
+<style>
+
+.grid {
+	display: grid;
+	grid-template-columns: 1fr 624px 1r;
+}
+
+.grid * { grid-column: 2 / 3; }
+
+</style>
+
+<section class="section">
+			<div class="container grid">
+				<nav class="breadcrumb" aria-label="breadcrumbs">
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li class="is-active"><a href="#" aria-current="page">Signup for Acorn</a></li>
+					</ul>
+				</nav>
+			</div>
+		</section>
+
+<div class="field">
   <%= form_for @teacher, html: { class: "form" } do |f| %>
-    <h2 class="form-header">Sign Up</h2>
+    <h1 class="title">Teacher Signup</h1>
 
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-
-    <%= f.label :username %>
-    <%= f.number_field :username %>
+    <label class="label"><%= label_tag :email %></label>
+      <div class="control has-icons-left has-icons-right">
+    <input class="input" <%= text_field_tag :email %>
+    <label class="label"><%= label_tag :username %></label>
+    <%= text_field_tag :username %>
+    <label class="label"><%= label_tag :password %></label>  
+    <%= password_field_tag :password %>
 
     <%= f.label :zipcode %>
     <%= f.text_field :zipcode %>
@@ -22,6 +45,6 @@
       </ul>
     <% end %>
 
-    <%= f.submit "Sign Up", class: "button" %>
+    <button class="button is-link"><%= submit_tag "Signup" %></button>
   <% end %>
 </div>

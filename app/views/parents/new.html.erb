@@ -1,18 +1,34 @@
-<div class="card">
-  <%= form_for @parent, html: { class: "form" } do |f| %>
-    <h2 class="form-header">Sign Up</h2>
+<section class="section">
+			<div class="container grid">
+				<nav class="breadcrumb" aria-label="breadcrumbs">
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li class="is-active"><a href="#" aria-current="page">Sign up for Acorn</a></li>
+					</ul>
+				</nav>
+			</div>
+		</section>
 
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+<style>
+.grid {
+	display: grid;
+	grid-template-columns: 1fr 624px 1r;
+}
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+.grid * { grid-column: 2 / 3; }
+</style>
 
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-
-    <%= f.label :zipcode %>
-    <%= f.number_field :zipcode %>
+<div class="field grid"> 
+  <h1 class="title">Parent Signup</h1>
+  <%= form_for @parent, html: { class: "field" } do |f| %>
+    <label class="label"><%= f.label :email %></label>
+    <input class="input is-success" f.text_field :email placeholder="hello@example.com">
+    <label class="label"><%= f.label :username %></label>
+    <input class="input is-success" f.text_field :username placeholder="@barbarastreisand">
+    <label class="label"><%= f.label :password %></label>  
+    <input class="input" f.password_field :password placeholder="**********">
+    <label class="label"><%= f.label :zipcode %></label>
+    <input class="input" f.text_field :zipcode placeholder="10011">
 
     <% if flash[:errors] %>
       <ul>
@@ -22,6 +38,15 @@
       </ul>
     <% end %>
 
-    <%= f.submit "Sign Up", class: "button" %>
+    <div class="field">
+      <div class="control">
+        <label class="checkbox">
+          <input type="checkbox">
+            I agree to the <a href="#">terms and conditions</a>
+        </label>
+      </div>
+  </div>
+
+    <%= submit_tag "Signup" %>
   <% end %>
 </div>

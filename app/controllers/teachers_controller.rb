@@ -28,11 +28,11 @@ class TeachersController < ApplicationController
 
   def create
     @teacher = Teacher.create(teacher_params)
-    if teacher.valid?
+    if @teacher.valid?
       session[:teacher_id] = teacher.id
       redirect_to teacher
     else
-      flash[:errors] = pet.errors.full_messages
+      flash[:errors] = @teacher.errors.full_messages
       redirect_to new_teacher_path
     end
   end
