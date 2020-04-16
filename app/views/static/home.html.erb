@@ -5,25 +5,6 @@
     <div class="inner">
       <h3 class="masthead-brand"></h3>
       <nav class="nav nav-masthead justify-content-center">
-        <a class="nav-link active" href="/">Home</a>
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Parents
-        </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href=<%= new_parent_path %>>Signup as a parent</a>
-            <a class="dropdown-item" href=<%= parent_login_path %>>Login as a parent</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Parents
-        </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href=<%= new_teacher_path %>>Signup as a teacher</a>
-            <a class="dropdown-item" href="teachers/login">Login as a teacher</a>
-          </div>
-        </li>
       </nav>
     </div>
   </header>
@@ -45,20 +26,3 @@
 
 
 </body>      
-
-<%# 
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column text-center">
-      
-      <main role="main" class="inner cover">
-        <h1 class="heading">Find Afterschool Activities 🔍</h1>
-        <p class="form label">Rated by parents and endorsed by teachers, from dance to tutoring to daycare, find the best activities for your kids ☀️ </p>
-        <%# if cookies[:parent_account] %>
-            <%# <p class="form label"> %>
-            <%# <a href=<%= new_parent_path %> class="button">Sign up as a parent </a> %>
-            <%# <a href=<%= parent_login_path %> class="button">Log in as a parent</a> </p> %>
-        <%# else %>
-            <%# <p class="form label"> %>
-            <%# <a href=<%= new_teacher_path %> class="button">Sign up as a teacher </a> %>
-            <%# <a href=<%= "teachers/login" %> class="button">Log in as a teacher</a></p> %>
-        <%# end %>
-      <%# </main> %> %>

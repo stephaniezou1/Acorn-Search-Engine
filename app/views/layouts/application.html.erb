@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head> <link href="https://fonts.googleapis.com/icon?family=Material\Icons" rel="stylesheet">
+  <head> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Acorn</title>
     <%= csrf_meta_tags %>
@@ -10,36 +11,54 @@
   </head>
   <body>
       <header class="menu">
-        <div class="container">
           <nav class="logo">
-            <h2>Acorn</h2>
-          </nav>
-          <nav class="right">
-              <%# <% if logged_in? %>
-                <%= link_to "Search For An Activity", activities_path, class: "item" %>
-              <%= link_to "Find A Teacher", teachers_path, class: "item" %>
+            <h2 class="inline">Acorn</h2>
+          <div class="right inline">
+            <button class="button"><%= link_to "Home", root_path %></button>
+              <% if logged_in? %>
+                <button class="button"><%= link_to "Search For An Activity", activities_path, class: "item" %></button>
+                <button class="button"><%= link_to "Find A Teacher", teachers_path, class: "item" %></button>
                 <% if logged_in_parent %>
-                    <%= link_to "See My Ratings", ratings_path, class: "item" %>
+                    <button class="button"><%= link_to "See My Ratings", ratings_path, class: "item" %></button>
                 <% end %>
                 <% if logged_in_teacher %>
-                    <%= link_to "See My Endorsements", endorsements_path, class: "item" %>
+                    <button class="button"><%= link_to "See My Endorsements", endorsements_path, class: "item" %></button>
                 <% end %>
                   <span class="item">      
                       <% if logged_in? %>
-                      Welcome, <%= logged_in_user.username %>!
-                      <%= button_to "Log out", "/logout" %> <%# need to access teachers/logout or parents/logout%>
-                    <% else %>
-                      <%= link_to "Home", root_path %>
-                    <% end %>
+                        Welcome, <%= logged_in_user.username %>!
+                      <%= button_to "Log out", "/logout" %>
+                      <% end %>
                   </span>
-                <%# <% end %>
+                <% else %>
+                  <div class="dropdown right inline">
+                    <button class="button dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Parents
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href='parents/new'>Signup as a parent</a>
+                      <a class="dropdown-item" href='parents/login'>Login as a parent</a>
+                    </div>
+                  </div>
+                    <div class="dropdown right inline">
+                      <button class="button dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Teachers
+                      </button>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href= 'teachers/new'>Signup as a teacher</a>
+                      <a class="dropdown-item" href="teachers/login">Login as a teacher</a>
+                    </div>
+                  </div>
+                <% end %>
               </nav>
-            </div>
           </header>
         <main>
           <div class="container">
               <%= yield %>
         </div>
       </main>
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
 </html>

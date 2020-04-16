@@ -1,8 +1,9 @@
-<h1>Login as a Teacher</h1>
-
-<%= form_tag "/teachers/login", method: "POST", class: 'form' do %>
+<div class="card">
+<%= bootstrap_form_tag url: "/teachers/login", method: "POST", class: 'form' do %>
+  <h2 class="form-header">Teacher Login</h2>
   <%= label_tag :email %>
   <%= text_field_tag :email %>
+  <br/><br/>
   <%= label_tag :password %>
   <%= password_field_tag :password %>
 
@@ -14,6 +15,6 @@
 
   <br><br>
 
-  <%= submit_tag "Log In" %>
+  <%= submit_tag "Log In", class: "button" %>
 
 <% end %>

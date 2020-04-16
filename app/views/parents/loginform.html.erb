@@ -1,10 +1,14 @@
-<h1>Login as a Parent</h1>
+<div class="card">
 
-<%= form_tag "/parents/login", method: "POST", class: 'form' do %>
+<%= form_tag url:"/parents/login", method: "POST", class: 'form' do %>
+  <h2 class="form-header">Parent Login</h2>
   <%= label_tag :email %>
   <%= text_field_tag :email %>
+  <br/><br/>
   <%= label_tag :password %>
-  <%= password_field_tag :password %>
+  <%= password_field_tag :password, class: "block" %>
+  <%= submit_tag "Log In", class: "button" %>
+
   <br/>
 
   <% if flash[:error] %>
@@ -13,7 +17,6 @@
     </ul>
   <% end %>
 <br/>
-  <%= submit_tag "Log In" %>
 
 <% end %>
 
