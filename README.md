@@ -2,16 +2,12 @@
 
 This app will help connect parents with affordable after school activities for their children in a parent-to-parent rating system and teacher endorsements for quality assurance.
 
-## Implementated Features
-
-Some features include password encryption, authorization, validations, nested routes, numerous user journeys, dynamic search, nested forms, and the Bootstrap CSS library.
-
 ## Tech Stack
 
-1.  Ruby on Rails
-2.  PostgreSQL
-3.  SQLite
-4.  HTML/CSS
+*   Ruby on Rails
+*   PostgreSQL
+*   SQLite
+*   HTML/CSS
 
 ## Getting Started
 
@@ -43,6 +39,10 @@ As a teacher, you can...
 *   Search for a teacher’s username in the teacher search bar and see their endorsement lists of activities (read)
 *   Add activities onto my endorsement list (create)
 *   Delete activities off my endorsement list (delete)
+
+## Implementations
+
+Some features include password encryption, authorization, validations, nested routes, numerous user journeys, dynamic search, nested forms, and the Bootstrap CSS library.
 
 ## Tools
 
