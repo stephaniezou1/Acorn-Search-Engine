@@ -56,5 +56,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # for my seed data
 gem 'faker'
 gem 'jquery-rails'
-gem 'bootstrap'
+gem "bootstrap", ">= 4.3.1"
 gem 'bootstrap_form'
