@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting Started
 
-Things you may want to cover:
+Clone this repository onto your local machine.
+Run `bundle install` to download all the necessary gems.
+Run `rails db:migrate` to create the database.
+Run `rails db:seed` to seed the database with some auto-generated data.
+Run `rails s` to start the app!
 
-* Ruby version
+## Features
+Login or create an account
+Create recipes
+See other chef's profiles
+See all existing recipes
+Log cooking reviews
 
-* System dependencies
+auth, validations, nested routes, numerous user journeys, css library or pure css, external apis etc.)
+attach gifs that show your website
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
 * ...
