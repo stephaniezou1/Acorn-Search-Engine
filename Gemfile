@@ -60,5 +60,5 @@ gem 'bulma-rails'
 
 gem 'jquery-rails'
 
-gem 'bootstrap','~> 4.2.1'
+gem 'bootstrap'
 gem 'bootstrap_form'
