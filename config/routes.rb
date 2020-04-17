@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   root 'static#home'
+  get '/about', to: 'static#about'
 
   get '/parent_account', to: 'application#parent_account', as: 'parent_account'
   get '/teacher_account', to: 'application#teacher_account', as: 'teacher_account'
