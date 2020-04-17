@@ -33,7 +33,7 @@ As a teacher, you can...
 
 ## Implementated Features
 
-Password encryption, authorization, validations, nested routes, numerous user journeys
+Password encryption, authorization, validations, nested routes, numerous user journeys, dynamic search, nested forms, and more...
 
 ## Tech Stack
 
@@ -47,4 +47,3 @@ Password encryption, authorization, validations, nested routes, numerous user jo
 *   Bootstrap: CSS library
 *   Faker: fake data generator
 
-* ...
