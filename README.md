@@ -16,7 +16,7 @@ Run `rails s` to start the app!
 
 ## Features
 
-# Login or create an account as a parent or a teacher
+Login or create an account as a parent or a teacher:
 
 As a parent, you can... 
 
