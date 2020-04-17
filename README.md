@@ -1,5 +1,7 @@
 # README
 
+This app will help connect parents with affordable after school activities for their children in a parent-to-parent rating system and teacher endorsements for quality assurance.
+
 ## Getting Started
 
 Clone this repository onto your local machine.
