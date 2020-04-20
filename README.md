@@ -11,15 +11,15 @@ This app will help connect parents with affordable after school activities for t
 
 ## Getting Started
 
-Clone this repository onto your local machine.
+Clone this repository onto your local machine
 
-Run `bundle install` to download all the necessary gems.
+Run `bundle install` to download all the necessary gems
 
-Run `rails db:migrate` to create the database.
+Run `rails db:migrate` to create the database
 
-Run `rails db:seed` to seed the database with some auto-generated data.
+Run `rails db:seed` to seed the database with data
 
-Run `rails s` to start the app!
+Run `rails s` to start the app
 
 ## Features
 
