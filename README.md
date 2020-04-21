@@ -2,8 +2,6 @@
 
 This app will help connect parents with affordable after school activities for their children in a parent-to-parent rating system and teacher endorsements for quality assurance.
 
-https://gph.is/g/4A6vdpD
-
 ## Tech Stack
 
 *   Ruby on Rails
