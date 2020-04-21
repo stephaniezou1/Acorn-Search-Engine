@@ -2,7 +2,7 @@
 
 This app will help connect parents with affordable after school activities for their children in a parent-to-parent rating system and teacher endorsements for quality assurance.
 
-<iframe src="https://giphy.com/embed/KbS86XJWgp4ftZph7m" width="480" height="236" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/KbS86XJWgp4ftZph7m">via GIPHY</a></p>
+https://gph.is/g/4A6vdpD
 
 ## Tech Stack
 
