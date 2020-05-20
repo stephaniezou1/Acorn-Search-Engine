@@ -2,6 +2,8 @@
 
 This app will help connect parents with affordable after school activities for their children in a parent-to-parent rating system and teacher endorsements for quality assurance.
 
+I write a [tutorial on Medium] on how to build a dynamic search using Ruby on Rails "https://levelup.gitconnected.com/tutorial-build-a-yelp-dynamic-search-with-ruby-on-rails-b1a40f60fdd2?source=your_stories_page---------------------------"
+
 ## Tech Stack
 
 *   Ruby on Rails
@@ -40,9 +42,11 @@ As a teacher, you can...
 *   Add activities onto my endorsement list (create)
 *   Delete activities off my endorsement list (delete)
 
+For more detail on other features, please see [my Medium post]"https://medium.com/@stephaniezou/acorn-web-app-how-i-built-a-search-engine-using-ruby-on-rails-5efc3670a887" about Acorn!
+
 ## Implementations
 
-Some features include password encryption, authorization, validations, nested routes, numerous user journeys, dynamic search, nested forms, and the Bootstrap CSS library.
+Some features include password encryption, authorization, validations, nested routes, numerous user journeys, dynamic search, nested forms, and the Bootstrap CSS library. Read more about the search function in my [medium post]"
 
 ## Tools
 
